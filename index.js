@@ -69,3 +69,37 @@ function startGame() {
 
     console.log(playerCards);
     console.log(playerTotal);
+
+function getDealerValue(card) {
+    let cardInfo = card.split("-");
+    let value = cardInfo[0];
+
+    if(isNaN(value)){
+        if(value == "A") {
+            if(dealerTotal >= 11){
+                return 1;
+            }
+            return 11;
+            
+        }
+        return 10
+    }
+    return parseInt(value);
+}
+
+function getPlayerValue(card) {
+    let cardInfo = card.split("-");
+    let value = cardInfo[0];
+
+    if(isNaN(value)){
+        if(value == "A") {
+            if(playerTotal >= 11){
+                return 1;
+            }
+            return 11;
+            
+        }
+        return 10
+    }
+    return parseInt(value);
+}
