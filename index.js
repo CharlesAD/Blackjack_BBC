@@ -58,3 +58,14 @@ function startGame() {
         
     //     document.getElementById("player-cards").append(cardImg);
     // }
+
+    for (i = 0; i < 2; i++){
+        playerCards = deck.pop();
+        playerTotal += getPlayerValue(playerCards);
+        let card = document.createElement("img");
+        card.src = "./cards/" + playerCards + ".png";
+        document.getElementById("player-cards").prepend(card);
+        }
+
+    console.log(playerCards);
+    console.log(playerTotal);
