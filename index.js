@@ -81,6 +81,12 @@ function hit() {
     document.getElementById("player-cards").append(card);
     console.log(playerTotal);
 }
+function stay() {
+    let cardReveal = document.createElement("img");
+    cardReveal.src = "./cards/" + dealersHiddenCards + ".png";
+    document.getElementById("dealer-cards").prepend(cardReveal);
+    document.getElementById("card-back").replaceWith("");
+}
 function getDealerValue(card) {
     let cardInfo = card.split("-");
     let value = cardInfo[0];
