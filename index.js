@@ -26,3 +26,35 @@ const reset = document.querySelector("#reset");
 reset.addEventListener("click", function () {
     location.reload();
 });
+
+function startGame() {
+    dealersHiddenCards = deck.pop();
+    dealerTotal += getDealerValue(dealersHiddenCards);
+    
+    
+    
+    
+    console.log(dealersHiddenCards);
+    //console.log(dealerTotal);
+    //console.log(playerCards);
+    //console.log(playerTotal);
+    
+    while (dealerTotal < 17 ) {
+        let cardImg = document.createElement("img");
+        let card = deck.pop();
+        dealerTotal += getDealerValue(card);
+        cardImg.src = "./cards/" + card + ".png";
+        
+        document.getElementById("dealer-cards").append(cardImg);
+        
+    }
+    console.log(dealerTotal);
+    
+    // for (i = 1; i < 2; i++) {
+    //     let cardImg = document.createElement("img");
+    //     let card = deck.pop();
+    //     playerTotal += getPlayerValue(card);
+    //     cardImg.src = "./cards/" + card + ".png";
+        
+    //     document.getElementById("player-cards").append(cardImg);
+    // }
