@@ -1,0 +1,23 @@
+{
+  "name": "blackjack_bbc",
+  "version": "1.0.0",
+  "description": "Blackjack Assessment (BBC)",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CharlesAD/Blackjack_BBC.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CharlesAD/Blackjack_BBC/issues"
+  },
+  "homepage": "https://github.com/CharlesAD/Blackjack_BBC#readme",
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
