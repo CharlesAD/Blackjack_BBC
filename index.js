@@ -21,3 +21,8 @@ function shuffleDeck() {
     }
     console.log(deck); 
 }
+
+const reset = document.querySelector("#reset");
+reset.addEventListener("click", function () {
+    location.reload();
+});
