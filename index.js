@@ -1,3 +1,19 @@
+let deck;
+let values;
+
+let dealersHiddenCards;
+let dealerTotal = 0;
+
+let playerTotal = 0;
+
+
+
+window.onload = function() {
+    createDeck();
+    shuffleDeck();
+    startGame();
+}
+
 function createDeck(){
     let values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
     let types = ["C", "D", "H", "S"];
@@ -10,6 +26,8 @@ function createDeck(){
     }
 // console.log(deck);
 }
+
+
 function shuffleDeck() {
     for(i = 0; i < 1000; i++) {
         let location1 = Math.floor((Math.random() * deck.length));
@@ -70,6 +88,11 @@ function startGame() {
     console.log(playerCards);
     console.log(playerTotal);
 
+    document.getElementById("hit").addEventListener("click", hit);
+    document.getElementById("stay").addEventListener("click", stay);
+    
+}
+
 function hit() {
     if (playerTotal > 21){
         return;
@@ -81,12 +104,37 @@ function hit() {
     document.getElementById("player-cards").append(card);
     console.log(playerTotal);
 }
+
 function stay() {
     let cardReveal = document.createElement("img");
     cardReveal.src = "./cards/" + dealersHiddenCards + ".png";
     document.getElementById("dealer-cards").prepend(cardReveal);
     document.getElementById("card-back").replaceWith("");
+
+
+
+    let message = "";
+    if (playerTotal > 21) {
+        message = "You Lose! You went BUST!"
+    }
+    else if (dealerTotal > 21) {
+        message = "You Win! The Dealer went BUST!"
+    }
+    else if (playerTotal == dealerTotal) {
+        message = "It's a Draw!"
+    }
+    else if (playerTotal > dealerTotal) {
+        message = "You Win!";
+    }
+    else if (playerTotal < dealerTotal) {
+        message = "You Lose!"
+    }
+
+    document.getElementById("dealer-sum").innerText = dealerTotal;
+    document.getElementById("player-sum").innerText = playerTotal;
+    document.getElementById("results").innerText = message;
 }
+
 function getDealerValue(card) {
     let cardInfo = card.split("-");
     let value = cardInfo[0];
