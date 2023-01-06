@@ -70,6 +70,17 @@ function startGame() {
     console.log(playerCards);
     console.log(playerTotal);
 
+function hit() {
+    if (playerTotal > 21){
+        return;
+    }
+    playerCards = deck.pop();
+    playerTotal += getPlayerValue(playerCards);
+    let card = document.createElement("img");
+    card.src = "./cards/" + playerCards + ".png";
+    document.getElementById("player-cards").append(card);
+    console.log(playerTotal);
+}
 function getDealerValue(card) {
     let cardInfo = card.split("-");
     let value = cardInfo[0];
