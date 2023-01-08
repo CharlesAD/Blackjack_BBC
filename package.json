@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/CharlesAD/Blackjack_BBC#readme",
   "devDependencies": {
+    "@testing-library/dom": "^8.19.1",
     "babel-preset-env": "^1.7.0",
     "jest": "^29.3.1"
   }

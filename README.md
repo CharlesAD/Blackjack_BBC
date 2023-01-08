@@ -37,17 +37,17 @@ Joker = 10
 
 My Steps
 
-Create decks
+- Create decks
 
-Shuffle deck
+- Shuffle deck
 
-Start game
+- Start game
 
-Deal cards
+- Deal cards
 
-Check if the Dealer or yourself has BlackJack (score of 21) or anyone is "Bust" (score over 21)
+- Check if the Dealer or yourself has BlackJack (score of 21) or anyone is "Bust" (score over 21)
 
-Allow player to "Hit" or "Stay"
+- Allow player to "Hit" or "Stay"
 
-Did you win, lose or tie?
+- Did you win, lose or tie?
 
