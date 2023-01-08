@@ -49,7 +49,13 @@ function startGame() {
     dealersHiddenCards = deck.pop();
     dealerTotal += getDealerValue(dealersHiddenCards);
     
-    
+    for (i = 0; i < 2; i++){
+    playerCards = deck.pop();
+    playerTotal += getPlayerValue(playerCards);
+    let card = document.createElement("img");
+    card.src = "./cards/" + playerCards + ".png";
+    document.getElementById("player-cards").prepend(card);
+    }
     
     
     console.log(dealersHiddenCards);
@@ -76,25 +82,15 @@ function startGame() {
         
     //     document.getElementById("player-cards").append(cardImg);
     // }
-
-    for (i = 0; i < 2; i++){
-        playerCards = deck.pop();
-        playerTotal += getPlayerValue(playerCards);
-        let card = document.createElement("img");
-        card.src = "./cards/" + playerCards + ".png";
-        document.getElementById("player-cards").prepend(card);
-        }
-
     console.log(playerCards);
     console.log(playerTotal);
 
     document.getElementById("hit").addEventListener("click", hit);
     document.getElementById("stay").addEventListener("click", stay);
-    
 }
 
 function hit() {
-    if (playerTotal > 21){
+    if (playerTotal >= 21){
         return;
     }
     playerCards = deck.pop();
@@ -110,7 +106,6 @@ function stay() {
     cardReveal.src = "./cards/" + dealersHiddenCards + ".png";
     document.getElementById("dealer-cards").prepend(cardReveal);
     document.getElementById("card-back").replaceWith("");
-
 
 
     let message = "";
@@ -168,3 +163,4 @@ function getPlayerValue(card) {
     }
     return parseInt(value);
 }
+
